@@ -18,11 +18,13 @@ export default function Header() {
       {/* Header principal */}
       <View style={styles.header}>
         <Text style={styles.logo}>americanas</Text>
-        <TextInput
-          style={styles.searchInput}
-          placeholder="busque aqui seu produto"
-          placeholderTextColor="#999"
-        />
+        <View style={styles.searchContainer}>
+          <TextInput
+            style={styles.searchInput}
+            placeholder="busque aqui seu produto"
+            placeholderTextColor="#999"
+          />
+        </View>
         <View style={styles.icons}>
           <TouchableOpacity>
             <Ionicons name="person-outline" size={24} color="#fff" />
@@ -76,7 +78,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingHorizontal: 10,
     paddingVertical: 12,
-    flexWrap: 'wrap', // Permite que os itens se movam para a linha seguinte
   },
   logo: {
     color: '#fff',
@@ -84,13 +85,18 @@ const styles = StyleSheet.create({
     fontSize: 20,
     marginRight: 10,
   },
+  searchContainer: {
+    flex: 1,
+    backgroundColor: 'white',
+    borderRadius: 25,
+    height: 40,
+    justifyContent: 'center',
+    paddingHorizontal: 15,
+  },
   searchInput: {
     flex: 1,
-    backgroundColor: '#fff',
-    borderRadius: 4,
-    paddingHorizontal: 10,
-    height: 35,
     fontSize: 14,
+    color: '#999',
   },
   icons: {
     flexDirection: 'row',
