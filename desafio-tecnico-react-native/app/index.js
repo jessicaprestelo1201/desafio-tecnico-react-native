@@ -1,11 +1,12 @@
-import Header from '../components/Header/Header.jsx';
-import OffersSection from '../components/OffersSection/OffersSection.jsx';
+import Footer from '../components/Footer/footer.js';
+import Header from '../components/Header/Header.js';
+
 
 export default function Home() {
     return (
         <>
             <Header />
-            <OffersSection />
+           <Footer />
         </>
     );
 }
