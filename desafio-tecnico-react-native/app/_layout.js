@@ -27,7 +27,7 @@ export default function Layout() {
                 name="index"
                 options={{
                     headerShown: false,
-                    tabBarLabel: "Home", // Adiciona o nome abaixo do ícone
+                    tabBarLabel: "Home", 
                     tabBarIcon: ({ color, size }) => (
                         <Entypo name="home" size={size} color={color} />
                     ),
@@ -37,7 +37,7 @@ export default function Layout() {
                 name="category"
                 options={{
                     headerShown: false,
-                    tabBarLabel: "Categorias", // Adiciona o nome abaixo do ícone
+                    tabBarLabel: "Categorias", 
                     tabBarIcon: ({ color, size }) => (
                         <Entypo name="menu" size={size} color={color} />
                     ),
@@ -47,7 +47,7 @@ export default function Layout() {
                 name="favorites"
                 options={{
                     headerShown: false,
-                    tabBarLabel: "Favoritos", // Adiciona o nome abaixo do ícone
+                    tabBarLabel: "Favoritos", 
                     tabBarIcon: ({ color, size }) => (
                         <Entypo name="heart" size={size} color={color} />
                     ),

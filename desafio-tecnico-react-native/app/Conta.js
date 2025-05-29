@@ -1,113 +1,145 @@
-import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import React from "react"
+import { View, Text, StyleSheet, Image, Pressable, ImageBackgroundBase } from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 
-export default function AccountScreen() {
-  return (
-    <View style={styles.container}>
-      {/* Logo no topo */}
-      <View style={styles.logoContainer}>
-        <Text style={styles.logoText}>américanas</Text>
-      </View>
+export default function FavoriteScreen() {
+    return (
+        
+        <View style={styles.container}>
 
-      {/* Mensagem central */}
-      <View style={styles.messageContainer}>
-        <Text style={styles.messageText}>
-          Para uma melhor experiência,{"\n"}
-          entre ou cadastre-se
-        </Text>
-      </View>
+            <View>
+                <Image 
+                    source={{
+                        uri: 'https://upload.wikimedia.org/wikipedia/commons/8/8a/Logo_americanas.png'
+                    }}
+                    style={{ width: 195, height: 100, marginTop: 100 }}
+                />
+            </View>
 
-      {/* Divisor */}
-      <View style={styles.divider} />
+            <View style={styles.content}>
+                <Text style={styles.text}>
+                    Para uma melhor experiência, entre ou cadastre-se 
+                </Text>
+            </View>
 
-      {/* Botão de cadastro */}
-      <TouchableOpacity style={styles.registerButton}>
-        <Text style={styles.registerButtonText}>Cadastrar conta</Text>
-      </TouchableOpacity>
+            <View style={styles.pressable}>
+            <Pressable style={{ backgroundColor: '#EE0000', width: 400, height: 50, borderRadius: 2, alignItems: 'center', justifyContent: 'center' }}>
+                <Text style={{ color: '#FFF', fontWeight: '500' }}>Cadastrar conta</Text>
+            </Pressable>
+            <Pressable style={{ backgroundColor: '#F8f8ff', width: 400, height: 50, borderRadius: 2, alignItems: 'center', justifyContent: 'center', marginTop: 20 }}>
+                <Text style={{ color: '#EE0000', fontWeight: '500' }}>Entrar com e-mail</Text>
+            </Pressable>
+            </View>
 
-      {/* Opção de login */}
-      <TouchableOpacity style={styles.loginOption}>
-        <Text style={styles.loginOptionText}>- Entrar com e-mail</Text>
-      </TouchableOpacity>
+            <View style={styles.pressableTerms}>
+            <Pressable style={{
+                width: 190,
+                height: 100,
+                borderRadius: 2,
+                backgroundColor: '#F8f8ff',
+                padding: 10,
+                position: 'relative',
+                overflow: 'hidden'
+            }}>
+                <Ionicons
+                    name="chevron-forward-outline"
+                    size={16}
+                    style={{
+                        position: 'absolute',
+                        top: 10,
+                        right: 10
+                    }}
+                />
+                <Text style={{
+                    color: '#000',
+                    fontWeight: '500',
+                    position: 'absolute',
+                    left: 10,
+                    bottom: 10
+                }}>
+                    Aviso de Privacidade
+                </Text>
+            </Pressable>
 
-      {/* Rodapé */}
-      <View style={styles.footer}>
-        <View style={styles.footerRow}>
-          <Text style={styles.footerText}>Aviso de Privacidade</Text>
-          <Text style={styles.footerText}>Suporte</Text>
+            <Pressable style={{
+                width: 190,
+                height: 100,
+                borderRadius: 2,
+                backgroundColor: '#F8f8ff',
+                padding: 10,
+                position: 'relative',
+                overflow: 'hidden'
+            }}>
+                <Ionicons
+                    name="chevron-forward-outline"
+                    size={16}
+                    style={{
+                        position: 'absolute',
+                        top: 10,
+                        right: 10
+                    }}
+                />
+                <Text style={{
+                    color: '#000',
+                    fontWeight: '500',
+                    position: 'absolute',
+                    left: 10,
+                    bottom: 10
+                }}>
+                
+                    Suporte
+                </Text>
+            </Pressable>
+            </View>
+
+                <View style={styles.developer}>
+                    <Image
+                    source={{
+                    uri: 'https://fontmeme.com/temporary/re_6254_userlmn_1093079cbaf8.png'
+                    }}
+                    style={{ width: 30, height: 30}}
+                    />
+                    <Text>Desenvolvido por Kobe</Text>
+                    <Text>v11.369.0</Text>
+                </View>
+
         </View>
-        <Text style={styles.footerText}>Ks Desenvolvido por Kobe v11.2/9/5</Text>
-      </View>
-    </View>
-  );
+    )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    padding: 20,
-  },
-  logoContainer: {
-    alignItems: 'center',
-    marginTop: 40,
-    marginBottom: 30,
-  },
-  logoText: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#e60014',
-    textTransform: 'lowercase',
-  },
-  messageContainer: {
-    alignItems: 'center',
-    marginVertical: 30,
-  },
-  messageText: {
-    fontSize: 16,
-    color: '#333',
-    textAlign: 'center',
-    lineHeight: 24,
-  },
-  divider: {
-    height: 1,
-    backgroundColor: '#ddd',
-    marginVertical: 20,
-  },
-  registerButton: {
-    backgroundColor: '#e60014',
-    padding: 15,
-    borderRadius: 25,
-    alignItems: 'center',
-    marginBottom: 15,
-  },
-  registerButtonText: {
-    color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  loginOption: {
-    padding: 10,
-    alignItems: 'center',
-  },
-  loginOptionText: {
-    color: '#e60014',
-    fontSize: 16,
-  },
-  footer: {
-    position: 'absolute',
-    bottom: 20,
-    left: 0,
-    right: 0,
-    alignItems: 'center',
-  },
-  footerRow: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-    marginBottom: 10,
-  },
-  footerText: {
-    fontSize: 12,
-    color: '#666',
-  },
-});
+
+    container: {
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        textAlign: 'center',
+        display: 'flex',
+    },
+
+    text: {
+        paddingTop: 20,
+        fontWeight: '500',
+        width: 200,
+        justifyContent: 'center',
+        textAlign: 'center',
+    },
+
+    pressable: {
+        paddingTop: 35 ,
+    },
+
+    pressableTerms: {
+        width: '100%',
+        height: 170,
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        padding: 15
+    },
+    
+    developer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+})
